@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News home page</title>
+    <style>
+      .main-image {
+        height: 350px;
+        grid-area: main-image;
+        background-color: red;
+      }
+      .main-title {
+        grid-area: main-title;
+        background-color: blue;
+      }
+      .main-desc {
+        grid-area: main-desc;
+        background-color: green;
+      }
+      .highlights {
+        grid-area: highlights;
+        background-color: black;
+        transition: background-color 0.6s ease;
+      }
+      .highlights:hover {
+        background-color: pink;
+        transform: scale(0.8);
+        transition: transform 2s ease;
+      }
+      .news1 {
+        grid-area: news1;
+        background-color: yellow;
+      }
+      .news2 {
+        grid-area: news2;
+        background-color: orange;
+      }
+      .news3 {
+        grid-area: news3;
+        background-color: purple;
+      }
+
+      .news {
+        display: grid;
+        grid-template-areas:
+          "main-image main-image highlights"
+          "main-image main-image highlights"
+          "main-title main-desc highlights"
+          "news1 news2 news3";
+      }
+      div {
+        min-height: 200px;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>W.</h1>
+      <nav>
+        <a href="#">home</a>
+        <a href="#">news</a>
+      </nav>
+    </header>
+    <section class="news">
+      <div class="main-image"></div>
+      <div class="main-title"></div>
+      <div class="main-desc"></div>
+      <div class="highlights"></div>
+      <div class="news1"></div>
+      <div class="news2"></div>
+      <div class="news3"></div>
+    </section>
+  </body>
+</html>
