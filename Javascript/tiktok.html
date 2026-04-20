@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .login-popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: rgba(245, 222, 179, 0.501);
+        display: none;
+        align-items: center;
+        justify-content: center;
+      }
+      .login-popup form {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>HEre is a video</h1>
+    <button>Like</button>
+
+    <div class="login-popup">
+      <form action="">
+        email: <input type="email" name="email" id="email" /> <br />
+        password: <input type="password" name="password" id="password" /> <br />
+        <input type="submit" value="Login" />
+      </form>
+    </div>
+
+    <script>
+      const isLoggedIn = true;
+
+      const likeButton = document.querySelector("button");
+      const loginPopup = document.querySelector(".login-popup");
+
+      likeButton.addEventListener("dblclick", () => {
+        if (!isLoggedIn) {
+          loginPopup.style.display = "flex";
+        } else {
+          likeButton.style.backgroundColor = "red";
+        }
+      });
+    </script>
+  </body>
+</html>
