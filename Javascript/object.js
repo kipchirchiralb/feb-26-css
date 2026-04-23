@@ -1,0 +1,1 @@
+// Object ---  In javascipt almost everything is an object. An object is a collection of properties, and a property is an association between a name (or key) and a value. The value of a property can be a function, in which case the property is known as a method.
