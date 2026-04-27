@@ -22,5 +22,18 @@ console.log(fsClass.concat(dsClass));
  * Write a function that takes an array of numbers as input and returns a new array with only the even numbers from the original array.
  * Write a function that takes an array of strings as input and returns a new array with only the strings that contain the letter "a".
  * Write a function that takes an array of numbers as input and returns the average of the numbers in the array.
- 
  **/
+
+function sumArray(numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  return sum;
+}
+
+const marks = [85, 90, 78, 92, 88];
+const result = sumArray([1, 2, 3, 4, 5]);
+
+const totalMarks = sumArray(marks);
+

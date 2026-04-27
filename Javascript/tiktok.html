@@ -41,13 +41,15 @@
       const likeButton = document.querySelector("button");
       const loginPopup = document.querySelector(".login-popup");
 
-      likeButton.addEventListener("dblclick", () => {
+      const funcTwo = () => {
         if (!isLoggedIn) {
           loginPopup.style.display = "flex";
         } else {
           likeButton.style.backgroundColor = "red";
         }
-      });
+      };
+
+      likeButton.addEventListener("dblclick", funcTwo);
     </script>
   </body>
 </html>
