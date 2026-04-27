@@ -103,7 +103,7 @@ const students = [
     name: "Dennis Kipngetich",
     email: "dennis.k@eldohub.ac.ke",
     gender: "male",
-    age: 25,
+    age: 15,
     isInsured: false,
   },
   {
@@ -131,7 +131,7 @@ const students = [
     name: "Philemon Kipkurui",
     email: "philemon.k@eldohub.ac.ke",
     gender: "male",
-    age: 27,
+    age: 20,
     isInsured: false,
   },
   {
@@ -142,3 +142,27 @@ const students = [
     isInsured: true,
   },
 ];
+
+function getStdentsAboveAge(age, gender, listOfAllStudents) {
+  const genderFilteredData = listOfAllStudents.filter(
+    (student) => student.gender == gender,
+  );
+  //   console.log(genderFilteredData);
+  const ageFilteredData = genderFilteredData.filter(
+    (student) => student.age < 21,
+  );
+  //   console.log(ageFilteredData);
+  return ageFilteredData;
+}
+
+getStdentsAboveAge(21, "male", students);
+
+// Write a function that sorts the whole list of students by age in descending - oldest to the youngest - sort
+
+function sortStudentsAges(listofallstudents) {
+  const studentages = listofallstudents.sort((a, b) => b.age - a.age);
+  return studentages;
+}
+console.log(sortStudentsAges(students));
+
+// Write a function that will create a exact copy of the list of students but with emails reading @gmail.com instead of @eldohub.ac.ke - map
