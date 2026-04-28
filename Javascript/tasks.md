@@ -1,5 +1,3 @@
-Optimizing tool selection... I'll explore your workspace to understand the curriculum level and topics covered, then create targeted practice questions.
-
 Based on your curriculum, here are **12 practice questions** with real-world scenarios to sharpen algorithm and data manipulation skills:
 
 ---
@@ -149,5 +147,3 @@ Based on your curriculum, here are **12 practice questions** with real-world sce
 - Move to **#3-5** (array operations)
 - Build to **#6-8** (objects & complex data)
 - Challenge yourself with **#9-12** (real-world scenarios with multiple operations)
-
-Would you like me to create starter code templates or solution guides for any of these?You've used 54% of your weekly rate limit. Your weekly rate limit will reset on May 4 at 3:00 AM. [Learn More](https://aka.ms/github-copilot-rate-limit-error)
