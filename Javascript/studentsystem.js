@@ -40,8 +40,6 @@ const courses = [
       { id: 207, name: "Nyambura Muchiri" },
       { id: 208, name: "Okello Joram" },
       { id: 209, name: "Fatuma Ali" },
-      { id: 210, name: "Gati Chacha" },
-      { id: 211, name: "Barasa Kundu" },
       { id: 212, name: "Makena Mutua" },
       { id: 213, name: "Khamisi Mohammed" },
       { id: 214, name: "Zawadi Luvai" },
@@ -60,9 +58,6 @@ const courses = [
       { id: 305, name: "Wanjala Nasimiyu" },
       { id: 306, name: "Odour Silas" },
       { id: 307, name: "Kuria Macharia" },
-      { id: 308, name: "Mwaniki Thuo" },
-      { id: 309, name: "Khadija Idi" },
-      { id: 310, name: "Ekwam Epetet" },
     ],
   },
   {
@@ -100,4 +95,23 @@ function checkSlotAvailability(courses) {
 }
 checkSlotAvailability(courses);
 
-// do percentate capacity capacity
+// do percentate capacity
+
+function getEnrollmentPercentage(courses) {
+  const result = {};
+  courses.forEach((course) => {
+    result[course.courseName] =
+      `${(course.enrolledStudents.length / course.maxCapacity) * 100}%`;
+  });
+  return result;
+}
+console.log(getEnrollmentPercentage(courses));
+
+const sortedByEnrollmentASC = courses.sort(
+  (a, b) => a.enrolledStudents.length - b.enrolledStudents.length,
+);
+
+const mostPopular = sortedByEnrollmentASC[courses.length - 1].courseName;
+const leastPopular = sortedByEnrollmentASC[0].courseName;
+console.log(mostPopular + " is the the most popular course");
+console.log(leastPopular + " is the the least popular course");
