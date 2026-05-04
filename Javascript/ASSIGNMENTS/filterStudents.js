@@ -165,4 +165,4 @@ function sortStudentsAges(listofallstudents) {
 }
 console.log(sortStudentsAges(students));
 
-// Write a function that will create a exact copy of the list of students but with emails reading @gmail.com instead of @eldohub.ac.ke - map
+// Write a function that will create a exact copy of the list of students but with emails reading @gmail.com instead of @eldohub.ac.ke - map , sole this wothout mao method, use a for loop
