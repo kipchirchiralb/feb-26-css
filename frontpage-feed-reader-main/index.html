@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News Feeds</title>
+
+    <style>
+      header {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        background-color: #f0f0f0;
+      }
+      header .actions {
+        margin-left: auto;
+        display: flex;
+        gap: 10px;
+      }
+
+      .side-tab-link span {
+        background-color: orange;
+        color: white;
+        padding: 2px;
+        border-radius: 4px;
+      }
+      .main-container {
+        display: flex;
+      }
+      .main-container .side-tabs {
+        width: 200px;
+        border-right: 1px solid #ccc;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>FrontPage</h1>
+      <nav>
+        <a href="#" class="active-link">Feed</a>
+        <a href="#">Digest</a>
+        <a href="#">Discover </a>
+      </nav>
+      <nav class="actions">
+        <form action="">
+          <input type="text" placeholder="Search articles...." />
+        </form>
+        <button>+</button>
+        <button>MS</button>
+      </nav>
+    </header>
+    <div class="main-container">
+      <div class="side-tabs" id="side-tabs">
+        <button>All Items</button>
+      </div>
+      <main class="articles"></main>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

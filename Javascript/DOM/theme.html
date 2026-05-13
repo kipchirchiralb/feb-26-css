@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Object Model</title>
+  </head>
+  <body>
+    <h1>Demo page -- Click to choose a random bg collor</h1>
+    <button>Click here</button>
+    <h2>Steps in DOM manipulation</h2>
+    <ol>
+      <li id="ghjk">
+        Identify the elements to manipulate - change behavior, add actions,
+        remove
+      </li>
+      <li>
+        Identify the event to listen for - click, mouseover, keydown, etc. - by
+        default all code is executed on page load
+      </li>
+      <li>
+        Write the action code that will update the existing content / structure/
+        style
+      </li>
+    </ol>
+    <script>
+      const themes = [
+        { bg: "darkgreen", text: "cream" },
+        { bg: "black", text: "white" },
+        { bg: "blue", text: "yellow" },
+        { bg: "purple", text: "pink" },
+        { bg: "red", text: "white" },
+      ];
+      // the click me button will change the theme of the page to a random one from the themes array
+      const body = document.querySelector("body");
+      const button = document.querySelector("button");
+      button.addEventListener("click", () => {
+        const randomIndex = Math.floor(Math.random() * themes.length); // give you a random number between 0-  5
+        const theme = themes[randomIndex];
+        body.style.backgroundColor = theme.bg;
+        body.style.color = theme.text;
+        document.querySelector("ol").setAttribute("class", "section");
+      });
+    </script>
+    <style>
+      .section {
+        background-color: lightgray;
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 100px;
+        font-style: italic;
+        color: black;
+        padding: 100px;
+        font-size: 40px;
+      }
+    </style>
+  </body>
+</html>
