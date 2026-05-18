@@ -28,8 +28,7 @@
   <body>
     My balance $921.48 Spending - Last 7 days mon tue wed thu fri sat sunss
     Total this month $478.33 +2.4% from last month
-
-    
+    <div id="bar-chart"></div>
 
     <script>
       const data = [
@@ -42,6 +41,55 @@
         { day: "sun", amount: 25.48 },
       ];
       // use data here
+
+      const barChart = document.getElementById("bar-chart");
+      data.forEach((item) => {
+        const barGroup = document.createElement("div");
+        const bar = document.createElement("div");
+        bar.classList.add("bar");
+        const label = document.createElement("p");
+        label.classList.add("label");
+        label.textContent = item.day;
+        bar.style.height = `${item.amount * 3}px`;
+
+        if (item.day === "wed") {
+          bar.style.backgroundColor = "hsl(186, 34%, 60%)";
+        }
+        barGroup.appendChild(bar);
+        barGroup.appendChild(label);
+        barChart.appendChild(barGroup);
+      });
+
+      /* 
+      <div> 
+            <div class="bar"></div>
+            <p>mon</p> 
+        </div> 
+
+      */
     </script>
+    <style>
+      #bar-chart {
+        display: flex;
+        align-items: flex-end;
+        gap: 10px;
+        height: 200px;
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+      #bar-chart .bar {
+        width: 30px;
+        background-color: hsl(10, 79%, 65%);
+      }
+      #bar-chart p {
+        margin: 0;
+        text-align: center;
+        font-size: 0.875rem;
+      }
+      .label {
+        margin-top: 10px;
+        color: green;
+      }
+    </style>
   </body>
 </html>

@@ -257,6 +257,7 @@ function makeTabButtonsClickable() {
   tabButtons.forEach((button) => {
     button.addEventListener("click", (e) => {
       const catName = e.target.getAttribute("data-cat-name"); // get the catename of the button clicked
+      alert("Clicked category:", catName); // log the clicked category name for debugging
       const filteredCategory = feeds.categories.find(
         (cat) => cat.name === catName,
       ); // find the category object that matches the catName
@@ -267,3 +268,8 @@ function makeTabButtonsClickable() {
   });
 }
 makeTabButtonsClickable();
+
+document.getElementById("show-all").addEventListener("click", () => {
+  mainArticlesContainer.innerHTML = ""; // clear the main articles container
+  showAllItems(feeds.categories); // show all items again
+})
