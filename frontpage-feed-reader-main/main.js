@@ -214,7 +214,7 @@ function showTabs() {
       .join("");
 
     tab.innerHTML = `
-        <button class="tab-button">${category.name} - ${category.feeds.length} </button>
+        <button class="tab-button" data-cat-name="${category.name}"> ${category.name} - ${category.feeds.length} </button>
         <ul>
             ${feedListItem}
         </ul>
@@ -222,6 +222,48 @@ function showTabs() {
     sideTabsContainer.appendChild(tab);
   });
 }
+
 showTabs();
 
 //    <div class = "side-tab">  <button class="tab-button">Design - 6 </button> </div>
+const mainArticlesContainer = document.querySelector(".articles");
+
+function showAllItems(articles) {
+  articles.forEach((cat) => {
+    const category = document.createElement("h2");
+    category.textContent = cat.name;
+    mainArticlesContainer.appendChild(category);
+
+    cat.feeds.forEach((feed) => {
+      const articleItem = document.createElement("div");
+      articleItem.className = "article-item";
+      articleItem.innerHTML = `
+              <a href="${feed.feedUrl}" target="_blank">
+                  <h3>${feed.title}</h3>
+                  <p>${feed.description}</p>
+                <span class="format-flag"> ${feed.format} </span>
+              </a>
+            `;
+      mainArticlesContainer.appendChild(articleItem);
+    });
+  });
+}
+
+showAllItems(feeds.categories);
+
+function makeTabButtonsClickable() {
+  const tabButtons = document.querySelectorAll(".tab-button");
+
+  tabButtons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+      const catName = e.target.getAttribute("data-cat-name"); // get the catename of the button clicked
+      const filteredCategory = feeds.categories.find(
+        (cat) => cat.name === catName,
+      ); // find the category object that matches the catName
+
+      mainArticlesContainer.innerHTML = ""; // clear the main articles container
+      showAllItems([filteredCategory]); // show only the items of the filtered category
+    });
+  });
+}
+makeTabButtonsClickable();

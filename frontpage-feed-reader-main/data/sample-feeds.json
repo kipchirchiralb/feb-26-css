@@ -25,7 +25,7 @@
           "feedUrl": "https://www.joshwcomeau.com/rss.xml",
           "siteUrl": "https://www.joshwcomeau.com/",
           "description": "Friendly tutorials for developers.",
-          "format": "rss2"
+          "format": "rss2"  
         },
         {
           "title": "Kent C. Dodds",
